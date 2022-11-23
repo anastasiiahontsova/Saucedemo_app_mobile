@@ -1,7 +1,6 @@
 package fw;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -9,6 +8,7 @@ public class ItemContainerHelper extends BaseHelper {
 
     public static final String ITEM_CARD_XPATH = "(//android.view.ViewGroup[@content-desc='store item'])[$idx]//android.widget.ImageView";
     public static final String ADD_TO_CART_BTN_XPATH = "//android.view.ViewGroup[@content-desc='Add To Cart button']";
+    public static final String ITEM_COUNTER_PLUS_BTN_XPATH = "//android.view.ViewGroup[@content-desc='counter plus button']/android.widget.ImageView";
 
 
     public ItemContainerHelper(AppiumDriver driver) {
@@ -42,6 +42,14 @@ public class ItemContainerHelper extends BaseHelper {
     }
 
 
+    public void selectItemColour(By locator) {
+        tap(locator);
+
+    }
+
+    public void clickItemQuantityPlusButton() {
+        tap(By.xpath(ITEM_COUNTER_PLUS_BTN_XPATH));
+    }
 }
 
 

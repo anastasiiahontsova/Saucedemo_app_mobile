@@ -8,6 +8,7 @@ public class HeaderHelper extends BaseHelper {
     public static final String ADDED_ITEMS_CART_BADGE_XPATH = "//android.view.ViewGroup[@content-desc='cart badge']/android.widget.TextView";
 
 
+
     public HeaderHelper(AppiumDriver driver) {
         super(driver);
     }
@@ -24,7 +25,7 @@ public class HeaderHelper extends BaseHelper {
         waitUntilElementIsPresent(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH));
     }
 
-    public String getAddedItemsCounterNumber() {
-        return driver.findElement(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH)).getText();
+    public String getAddedItemsCounterNumber(By locator) {
+        return driver.findElement(locator).getText();
     }
 }

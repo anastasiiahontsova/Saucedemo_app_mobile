@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseHelper {
     public static final int EXPL_WAIT_SEC = 10;
+    public static final String SHOPPING_CART_BTN_XPATH = "//android.view.ViewGroup[@content-desc='cart badge']/android.widget.ImageView";
     AppiumDriver driver;
 
     public BaseHelper(AppiumDriver driver) {
@@ -80,4 +81,7 @@ public class BaseHelper {
         }
     }
 
+    public void goToShoppingCart() {
+        tap(By.xpath(SHOPPING_CART_BTN_XPATH));
+    }
 }

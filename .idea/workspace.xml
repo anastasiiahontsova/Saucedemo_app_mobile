@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1eac96b5-9f16-4815-b0e3-9d40600e1c25" name="Changes" comment="" />
+    <list default="true" id="1eac96b5-9f16-4815-b0e3-9d40600e1c25" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fw/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fw/HeaderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/HeaderHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fw/ItemContainerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/ItemContainerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fw/ShoppingCartHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/ShoppingCartHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/ShoppingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ShoppingCartTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +75,7 @@
       <recent name="fw" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ShoppingCartTest.addItemToShoppingCartBaseTest">
+  <component name="RunManager" selected="TestNG.ShoppingCartTest.addItemsOfDifferentColourToShoppingCartTest">
     <configuration name="LoginTest.testLoginNegativeEmptyEmailInputField" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_32e_mobile.test" />
       <extension name="coverage">
@@ -123,24 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunAppTest.startAppPositiveTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="QA_32e_mobile.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.RunAppTest" />
-      <option name="METHOD_NAME" value="startAppPositiveTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShoppingCartTest.addItemToShoppingCartBaseTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="QA_32e_mobile.test" />
       <extension name="coverage">
@@ -159,13 +148,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShoppingCartTest.addItemsOfDifferentColourToShoppingCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="QA_32e_mobile.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ShoppingCartTest" />
+      <option name="METHOD_NAME" value="addItemsOfDifferentColourToShoppingCartTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ShoppingCartTest.addItemsOfDifferentColourToShoppingCartTest" />
         <item itemvalue="TestNG.ShoppingCartTest.addItemToShoppingCartBaseTest" />
         <item itemvalue="TestNG.LoginTest.testLoginNegativeEmptyPwdInputField" />
         <item itemvalue="TestNG.LoginTest.testLoginNegativeEmptyEmailInputField" />
         <item itemvalue="TestNG.LoginTest.testLoginPositive" />
-        <item itemvalue="TestNG.RunAppTest.startAppPositiveTest" />
       </list>
     </recent_temporary>
   </component>
