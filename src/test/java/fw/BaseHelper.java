@@ -83,5 +83,11 @@ public class BaseHelper {
 
     public void goToShoppingCart() {
         tap(By.xpath(SHOPPING_CART_BTN_XPATH));
+        waitUntilElementIsClickable(By.xpath(SHOPPING_CART_BTN_XPATH));
+    }
+
+    public void openMenu() {
+        waitUntilElementIsClickable(By.xpath(ItemContainerHelper.OPEN_MENU_BTN_XPATH));
+        tap(By.xpath(ItemContainerHelper.OPEN_MENU_BTN_XPATH));
     }
 }

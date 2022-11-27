@@ -1,7 +1,6 @@
 package test;
 
 import fw.TestBase;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,48 +8,58 @@ import org.testng.annotations.Test;
 
 public class ShoppingCartTest extends TestBase {
 
-    public static final String PRODUCTS_CONTAINER_PAGE_XPATH = "//android.view.ViewGroup[@content-desc='products screen']/android.widget.ScrollView";
-    public static final String ADD_TO_CART_BTN_XPATH = "//android.view.ViewGroup[@content-desc='Add To Cart button']";
-    public static final String BLUE_COLOUR_ITEM_XPATH = "//android.view.ViewGroup[@content-desc='blue circle']/android.view.ViewGroup";
-    public static final String RED_COLOUR_ITEM_XPATH = "//android.view.ViewGroup[@content-desc='red circle']/android.view.ViewGroup";
-    public static final String ADDED_ITEMS_CART_BADGE_XPATH = "//android.view.ViewGroup[@content-desc='cart badge']/android.widget.TextView";
-
     @Test
     public void addItemToShoppingCartBaseTest() {
-        app.getItemContainerHelper().waitToLoad(By.xpath(PRODUCTS_CONTAINER_PAGE_XPATH));
+        app.getItemContainerHelper().waitForItemContainerPageToLoad();
         app.getItemContainerHelper().clickOnItemCard(1);
-        app.getItemContainerHelper().waitToLoad(By.xpath(ADD_TO_CART_BTN_XPATH));
+        app.getItemContainerHelper().waitForAddToCartBtnToLoad();
         app.getItemContainerHelper().addItemToShoppingCart();
         app.getHeaderHelper().waitForShoppingCartCounterToShowAddedItems();
-        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH)), "1", "Items number badge on the shopping cart icon shows: 1.");
+        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(), "1", "Number of items on the shopping cart icon shows: 1.");
     }
 
     @Test
-    public void addSameItemOfDifferentColoursAndQuantityToShoppingCartTest() {
-        app.getItemContainerHelper().waitToLoad(By.xpath(PRODUCTS_CONTAINER_PAGE_XPATH));
-        app.getItemContainerHelper().clickOnItemCard(1);
-        app.getItemContainerHelper().waitToLoad(By.xpath(ADD_TO_CART_BTN_XPATH));
-        app.getItemContainerHelper().addItemToShoppingCart();
-        app.getItemContainerHelper().selectItemColour(By.xpath(BLUE_COLOUR_ITEM_XPATH));
-        app.getItemContainerHelper().addItemToShoppingCart();
-        app.getItemContainerHelper().selectItemColour(By.xpath(RED_COLOUR_ITEM_XPATH));
+    public void addMultipleItemsToToShoppingCartTest() {
+        app.getItemContainerHelper().waitForItemContainerPageToLoad();
+        app.getItemContainerHelper().addSauceLabsOnesieDefaultColourToShoppingCart();
+        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(), "1", "Number of items on the shopping cart icon shows: 1.");
+        app.getItemContainerHelper().chooseGrayColourOfItem();
         app.getItemContainerHelper().clickItemQuantityPlusButton();
         app.getItemContainerHelper().addItemToShoppingCart();
-        app.getHeaderHelper().waitForShoppingCartCounterToShowAddedItems();
-        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH)), "4", "Items number badge on the shopping cart icon shows: 4.");
+        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(), "3", "Number of items on the shopping cart icon shows: 3.");
+        app.getItemContainerHelper().returnToItemContainerPage();
+        app.getItemContainerHelper().addSauceLabsBackpackDefaultColourToShoppingCart();
+        app.getItemContainerHelper().chooseRedColourOfItem();
+        app.getItemContainerHelper().clickItemQuantityPlusButton();
+        app.getItemContainerHelper().clickItemQuantityPlusButton();
+        app.getItemContainerHelper().addItemToShoppingCart();
+        Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(), "7", "Number of items on the shopping cart icon shows: 7.");
+        app.getShoppingCartHelper().goToShoppingCart();
 
-        //app.getShoppingCartHelper().goToShoppingCart();
-        //assert item number for black backpack is 1, assert the color is black
-        //Assert.assertEquals(app.getShoppingCartHelper().getAddedItemsCounterNumber(By.xpath("(//android.view.ViewGroup[@content-desc='product row'])[1]")), 1,  "Black");
-        //assert item number for blue backpack is 1, assert the color is blue
-        //Assert.assertEquals(app.getShoppingCartHelper().getAddedItemsCounterNumber(), 1, "Blue");
-        //srcrollDown()
-        //assert item number for red backpack is 2, assert the color is red
-        //Assert.assertEquals(app.getShoppingCartHelper().getAddedItemsCounterNumber(), 2, "Red");
-        //srcrollDown()
-        //assert the price for 4 backpacks is $89.97
+        Assert.assertEquals(app.getShoppingCartHelper().getNameOfFirstAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
+        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfFirstAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
+        //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "red", "The colour of the added item in shopping cart is : red.");
+        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfFirstAddedItem(), "1", "The quantity of the added item in shopping cart is : 1.");
+
+//        Assert.assertEquals(app.getShoppingCartHelper().getNameOfSecondAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
+//        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfSecondAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
+////        //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
+//        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfSecondAddedItem(), "2", "The quantity of the added item in shopping cart is : 2.");
 
 
+        app.getMenuHelper().resetAppState();
+        Assert.assertEquals(app.getShoppingCartHelper().verifyShoppingCartIsEmpty(), "true", "Number of items on the shopping cart icon shows: 0.");
+
+
+
+
+
+
+
+
+
+        //Add item(s) to the cart, close the browser and reopen the same site.
+        //
     }
 }
 

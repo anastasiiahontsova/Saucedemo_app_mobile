@@ -33,7 +33,7 @@ public class ApplicationManager {
         return menuHelper;
     }
 
-    public LoginHelper getLoginScreenHelper() {
+    public LoginHelper getLoginHelper() {
         return loginHelper;
     }
 
@@ -76,4 +76,7 @@ public class ApplicationManager {
         driver.quit();
     }
 
+    public void openDeepLink(String path) {
+        driver.get("mydemoapprn://"+ path);
+    }
 }

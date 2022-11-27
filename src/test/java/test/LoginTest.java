@@ -1,7 +1,6 @@
 package test;
 
 import fw.TestBase;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,9 +17,9 @@ public class LoginTest extends TestBase {
         app.getHeaderHelper().clickOnMenuBtn();
         app.getMenuHelper().waitForMenuToLoad();
         app.getMenuHelper().clickOnLogin();
-        app.getLoginScreenHelper().login(validEmail, validPwd);
-        app.getItemContainerHelper().waitToLoad(By.xpath(ITEMS_CONTAINER_XPATH));
-        Assert.assertTrue(app.getItemContainerHelper().waitToLoad(By.xpath(ITEMS_CONTAINER_XPATH)) != null, "Items page is loaded.");
+        app.getLoginHelper().login(validEmail, validPwd);
+//        app.getItemContainerHelper().waitToLoad(By.xpath(ITEMS_CONTAINER_XPATH));
+//        Assert.assertTrue(app.getItemContainerHelper().waitToLoad(By.xpath(ITEMS_CONTAINER_XPATH)) != null, "Items page is loaded.");
     }
 
     @Test
@@ -34,9 +33,9 @@ public class LoginTest extends TestBase {
         app.getHeaderHelper().clickOnMenuBtn();
         app.getMenuHelper().waitForMenuToLoad();
         app.getMenuHelper().clickOnLogin();
-        app.getLoginScreenHelper().login(invalidEmail, validPwd);
-        app.getLoginScreenHelper().waitForErrorMsgToAppear();
-        Assert.assertEquals(app.getLoginScreenHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
+        app.getLoginHelper().login(invalidEmail, validPwd);
+        app.getLoginHelper().waitForErrorMsgToAppear();
+        Assert.assertEquals(app.getLoginHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
     }
 
     @Test
@@ -50,9 +49,9 @@ public class LoginTest extends TestBase {
         app.getHeaderHelper().clickOnMenuBtn();
         app.getMenuHelper().waitForMenuToLoad();
         app.getMenuHelper().clickOnLogin();
-        app.getLoginScreenHelper().login(validEmail, invalidPwd);
-        app.getLoginScreenHelper().waitForErrorMsgToAppear();
-        Assert.assertEquals(app.getLoginScreenHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
+        app.getLoginHelper().login(validEmail, invalidPwd);
+        app.getLoginHelper().waitForErrorMsgToAppear();
+        Assert.assertEquals(app.getLoginHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
     }
 
     @Test
@@ -66,9 +65,9 @@ public class LoginTest extends TestBase {
         app.getHeaderHelper().clickOnMenuBtn();
         app.getMenuHelper().waitForMenuToLoad();
         app.getMenuHelper().clickOnLogin();
-        app.getLoginScreenHelper().login(emptyEmail, validPwd);
-        app.getLoginScreenHelper().waitForEmptyEmailErrorMsgToAppear();
-        Assert.assertEquals(app.getLoginScreenHelper().getEmptyEmailErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
+        app.getLoginHelper().login(emptyEmail, validPwd);
+        app.getLoginHelper().waitForEmptyEmailErrorMsgToAppear();
+        Assert.assertEquals(app.getLoginHelper().getEmptyEmailErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
         //app.getLoginScreenHelper().waitForErrorMsgToAppear();
         //Assert.assertEquals(app.getLoginScreenHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
     }
@@ -84,9 +83,9 @@ public class LoginTest extends TestBase {
         app.getHeaderHelper().clickOnMenuBtn();
         app.getMenuHelper().waitForMenuToLoad();
         app.getMenuHelper().clickOnLogin();
-        app.getLoginScreenHelper().login(validEmail, emptyPwd);
-        app.getLoginScreenHelper().waitForEmptyPwdErrorMsgToAppear();
-        Assert.assertEquals(app.getLoginScreenHelper().getEmptyPswErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
+        app.getLoginHelper().login(validEmail, emptyPwd);
+        app.getLoginHelper().waitForEmptyPwdErrorMsgToAppear();
+        Assert.assertEquals(app.getLoginHelper().getEmptyPswErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
         //app.getLoginScreenHelper().waitForErrorMsgToAppear();
         //Assert.assertEquals(app.getLoginScreenHelper().getErrorMsgText(), expectedErrMsgTxt, "Following error message appears: '" + expectedErrMsgTxt + "'");
 

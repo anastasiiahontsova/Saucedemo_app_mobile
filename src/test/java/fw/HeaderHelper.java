@@ -9,6 +9,8 @@ public class HeaderHelper extends BaseHelper {
 
 
 
+
+
     public HeaderHelper(AppiumDriver driver) {
         super(driver);
     }
@@ -25,7 +27,12 @@ public class HeaderHelper extends BaseHelper {
         waitUntilElementIsPresent(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH));
     }
 
-    public String getAddedItemsCounterNumber(By locator) {
-        return driver.findElement(locator).getText();
+    public String getAddedItemsCounterNumber() {
+        waitForShoppingCartCounterToShowAddedItems();
+        return driver.findElement(By.xpath(ADDED_ITEMS_CART_BADGE_XPATH)).getText();
     }
+
+
+
+
 }

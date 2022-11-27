@@ -17,6 +17,9 @@ public class LoginHelper extends BaseHelper {
 
 
 
+
+
+
     public LoginHelper(AppiumDriver driver) {
         super(driver);
     }
@@ -56,4 +59,7 @@ public class LoginHelper extends BaseHelper {
     }
 
 
+    public WebElement waitToLoad() {
+        return waitForElementToLoad(By.xpath(LOGIN_BTN_XPATH));
+    }
 }

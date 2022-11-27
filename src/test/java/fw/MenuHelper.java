@@ -7,7 +7,8 @@ public class MenuHelper extends BaseHelper {
 
     public static final String LOG_IN_XPATH = "//android.view.ViewGroup[@content-desc='menu item log in']";
     public static final String ABOUT_XPATH = "//android.view.ViewGroup[@content-desc='menu item about']";
-
+    public static final String RESET_APP_STATE_BTN_XPATH = "//android.view.ViewGroup[@content-desc='menu item reset app']";
+    public static final String CATALOG_BTN_XPATH = "//android.view.ViewGroup[@content-desc='open menu']";
 
 
     public MenuHelper(AppiumDriver driver) {
@@ -21,5 +22,16 @@ public class MenuHelper extends BaseHelper {
 
     public void waitForMenuToLoad() {
         waitUntilElementIsClickable(By.xpath(ABOUT_XPATH));
+    }
+
+    public void resetAppState() {
+        openMenu();
+        waitUntilElementIsClickable(By.xpath(RESET_APP_STATE_BTN_XPATH));
+        tap(By.xpath(RESET_APP_STATE_BTN_XPATH));
+        tap(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"));
+        waitUntilElementIsPresent(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView"));
+        tap(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"));
+        waitUntilElementIsClickable(By.xpath(CATALOG_BTN_XPATH));
+        tap(By.xpath(CATALOG_BTN_XPATH));
     }
 }
