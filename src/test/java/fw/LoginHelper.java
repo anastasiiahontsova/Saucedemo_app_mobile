@@ -10,14 +10,9 @@ public class LoginHelper extends BaseHelper {
     public static final String LOGIN_BTN_XPATH = "//android.view.ViewGroup[@content-desc='Login button']";
     public static final String ERROR_MSG_XPATH = "//android.view.ViewGroup[@content-desc='generic-error-message']/android.widget.TextView";
 
-    public static final String ERROR_MSG_EMPTY_EMAIL_XPATH ="//android.view.ViewGroup[@content-desc='Username-error-message']";
+    public static final String ERROR_MSG_EMPTY_EMAIL_XPATH = "//android.view.ViewGroup[@content-desc='Username-error-message']";
 
-    public static final String ERROR_MSG_EMPTY_PWD_XPATH ="//android.view.ViewGroup[@content-desc='Password-error-message']";
-
-
-
-
-
+    public static final String ERROR_MSG_EMPTY_PWD_XPATH = "//android.view.ViewGroup[@content-desc='Password-error-message']";
 
 
     public LoginHelper(AppiumDriver driver) {

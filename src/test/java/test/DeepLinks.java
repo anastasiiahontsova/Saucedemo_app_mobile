@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class DeepLinks extends TestBase {
 
     @Test
-    public void deepLinkDemo(){
+    public void deepLinkDemo() {
         app.openDeepLink("login");
         app.getLoginHelper().waitToLoad();
         app.openDeepLink("store-overview");

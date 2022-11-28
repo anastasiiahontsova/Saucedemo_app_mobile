@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-
 public class ShoppingCartTest extends TestBase {
 
     @Test
@@ -41,21 +40,21 @@ public class ShoppingCartTest extends TestBase {
         //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "red", "The colour of the added item in shopping cart is : red.");
         Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfFirstAddedItem(), "1", "The quantity of the added item in shopping cart is : 1.");
 
+        Assert.assertEquals(app.getShoppingCartHelper().getNameOfSecondAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
+        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfSecondAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
+//      Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
+        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfSecondAddedItem(), "2", "The quantity of the added item in shopping cart is : 2.");
+
 //        Assert.assertEquals(app.getShoppingCartHelper().getNameOfSecondAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
 //        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfSecondAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
 ////        //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
 //        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfSecondAddedItem(), "2", "The quantity of the added item in shopping cart is : 2.");
 
+//      check total price in shopping cart
+
 
         app.getMenuHelper().resetAppState();
-        Assert.assertEquals(app.getShoppingCartHelper().verifyShoppingCartIsEmpty(), "true", "Number of items on the shopping cart icon shows: 0.");
-
-
-
-
-
-
-
+        Assert.assertTrue(app.getShoppingCartHelper().verifyShoppingCartIsEmpty(), "Number of items on the shopping cart icon shows: 0.");
 
 
         //Add item(s) to the cart, close the browser and reopen the same site.

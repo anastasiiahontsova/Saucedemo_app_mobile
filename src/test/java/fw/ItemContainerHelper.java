@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class ItemContainerHelper extends BaseHelper {
-    
+
     public static final String PRODUCTS_CONTAINER_PAGE_XPATH = "//android.view.ViewGroup[@content-desc='products screen']/android.widget.ScrollView";
     public static final String ADD_TO_CART_BTN_XPATH = "//android.view.ViewGroup[@content-desc='Add To Cart button']";
     public static final String ITEM_CARD_XPATH = "(//android.view.ViewGroup[@content-desc='store item'])[$idx]//android.widget.ImageView";
@@ -35,10 +35,10 @@ public class ItemContainerHelper extends BaseHelper {
 //        waitUntilElementIsClickable(locator);
 //        tap(locator);
 
-        public void clickOnItemCard(Integer idx) {
-            waitUntilElementIsClickable(By.xpath(ITEM_CARD_XPATH.replace("$idx", idx.toString())));
-            tap(By.xpath(ITEM_CARD_XPATH.replace("$idx", idx.toString())));
-        }
+    public void clickOnItemCard(Integer idx) {
+        waitUntilElementIsClickable(By.xpath(ITEM_CARD_XPATH.replace("$idx", idx.toString())));
+        tap(By.xpath(ITEM_CARD_XPATH.replace("$idx", idx.toString())));
+    }
 
 
     public void addSauceLabsOnesieDefaultColourToShoppingCart() {
@@ -47,6 +47,7 @@ public class ItemContainerHelper extends BaseHelper {
         addItemToShoppingCart();
 
     }
+
     public void addItemToShoppingCart() {
         waitUntilElementIsClickable(By.xpath(ADD_TO_CART_BTN_XPATH));
         tap(By.xpath(ADD_TO_CART_BTN_XPATH));
@@ -59,7 +60,7 @@ public class ItemContainerHelper extends BaseHelper {
         tap(By.xpath(ITEM_COUNTER_PLUS_BTN_XPATH));
     }
 
-    public void swipeToStoreItem(String scrollableList, String itemTitle ) {
+    public void swipeToStoreItem(String scrollableList, String itemTitle) {
         try {
             String elementClassName = "android.widget.TextView";
 
@@ -77,12 +78,12 @@ public class ItemContainerHelper extends BaseHelper {
 //        tap(By.xpath(COLOUR_OPTION_ITEM_XPATH.replace("$colour", colour.toString())));
 //    }
 
-    public void chooseRedColourOfItem(){
+    public void chooseRedColourOfItem() {
         waitUntilElementIsClickable(By.xpath(RED_COLOUR_OPTION_ITEM_XPATH));
         tap(By.xpath(RED_COLOUR_OPTION_ITEM_XPATH));
     }
 
-    public void chooseGrayColourOfItem(){
+    public void chooseGrayColourOfItem() {
         waitUntilElementIsClickable(By.xpath(GRAY_COLOUR_OPTION_ITEM_XPATH));
         tap(By.xpath(GRAY_COLOUR_OPTION_ITEM_XPATH));
     }

@@ -42,7 +42,7 @@ public class ApplicationManager {
         return itemContainerHelper;
     }
 
-   public ShoppingCartHelper getShoppingCartHelper() {
+    public ShoppingCartHelper getShoppingCartHelper() {
         return shoppingCartHelper;
     }
 
@@ -77,6 +77,6 @@ public class ApplicationManager {
     }
 
     public void openDeepLink(String path) {
-        driver.get("mydemoapprn://"+ path);
+        driver.get("mydemoapprn://" + path);
     }
 }

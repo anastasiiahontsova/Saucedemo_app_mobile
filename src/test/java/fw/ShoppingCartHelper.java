@@ -2,11 +2,8 @@ package fw;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import javax.print.DocFlavor;
-
-public class ShoppingCartHelper extends BaseHelper{
+public class ShoppingCartHelper extends BaseHelper {
 
     public static final String NAME_OF_FIRST_ADDED_ITEM_IN_SHOPPING_CART_XPATH = "(//android.widget.TextView[@content-desc='product label'])[1]";
     public static final String NAME_OF_SECOND_ADDED_ITEM_IN_SHOPPING_CART_XPATH = "(//android.widget.TextView[@content-desc='product label'])[2]";
@@ -20,7 +17,7 @@ public class ShoppingCartHelper extends BaseHelper{
 
     public static final String PRICE_OF_FORTH_ITEM_IN_SHOPPING_CART_XPATH = "(//android.widget.TextView[@content-desc='product price'])[4]";
     public static final String QUANTITY_OF_FIRST_ITEM_IN_SHOPPING_CART_XPATH = "(//android.view.ViewGroup[@content-desc='counter amount'])[1]/android.widget.TextView";
-    public static final String QUANTITY_OF_SECOND_ITEM_IN_SHOPPING_CART_XPATH = "(//android.view.ViewGroup[@content-desc='counter amount'])[1]/android.widget.TextView";
+    public static final String QUANTITY_OF_SECOND_ITEM_IN_SHOPPING_CART_XPATH = "(//android.view.ViewGroup[@content-desc='counter amount'])[2]/android.widget.TextView";
     public static final String SHOPPING_CART_SCREEN = "//android.widget.ScrollView[@content-desc='cart screen']/android.view.ViewGroup";
 
     public static final String EMPTY_SHOPPING_CART_BADGE = "//android.view.ViewGroup[@content-desc='cart badge']/android.widget.ImageView";
@@ -29,8 +26,8 @@ public class ShoppingCartHelper extends BaseHelper{
         super(driver);
     }
 
-    public String  getAddedItemCounterNumber(By locator) {
-            return driver.findElement(locator).getText();
+    public String getAddedItemCounterNumber(By locator) {
+        return driver.findElement(locator).getText();
     }
 
     public String getNameOfFirstAddedItem() {
@@ -38,9 +35,9 @@ public class ShoppingCartHelper extends BaseHelper{
         return driver.findElement(By.xpath(NAME_OF_FIRST_ADDED_ITEM_IN_SHOPPING_CART_XPATH)).getText();
     }
 
-//    public String getNameOfSecondAddedItem() {
-//        return driver.findElement(By.xpath(NAME_OF_SECOND_ADDED_ITEM_IN_SHOPPING_CART_XPATH)).getText();
-//    }
+    public String getNameOfSecondAddedItem() {
+        return driver.findElement(By.xpath(NAME_OF_SECOND_ADDED_ITEM_IN_SHOPPING_CART_XPATH)).getText();
+    }
 
 
 //    public String getNameOfThirdAddedItem() {
@@ -87,7 +84,7 @@ public class ShoppingCartHelper extends BaseHelper{
         waitUntilElementIsClickable(By.xpath(SHOPPING_CART_BTN_XPATH));
         goToShoppingCart();
         waitUntilElementIsPresent(By.xpath(SHOPPING_CART_SCREEN));
-        if (driver.findElement(By.xpath(EMPTY_SHOPPING_CART_BADGE)).getText() != null);
-            return true;
+        if (driver.findElement(By.xpath(EMPTY_SHOPPING_CART_BADGE)).getText() != null) ;
+        return true;
     }
 }
