@@ -90,4 +90,6 @@ public class BaseHelper {
         waitUntilElementIsClickable(By.xpath(ItemContainerHelper.OPEN_MENU_BTN_XPATH));
         tap(By.xpath(ItemContainerHelper.OPEN_MENU_BTN_XPATH));
     }
+
+
 }

@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1eac96b5-9f16-4815-b0e3-9d40600e1c25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fw/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fw/HeaderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/HeaderHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fw/ItemContainerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/ItemContainerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fw/LoginHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/LoginHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fw/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/BaseHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/fw/ShoppingCartHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fw/ShoppingCartHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/Colour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/Colour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/DeepLinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/DeepLinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/ShoppingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ShoppingCartTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

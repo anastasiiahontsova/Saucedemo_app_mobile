@@ -33,8 +33,8 @@ public class ShoppingCartTest extends TestBase {
         app.getItemContainerHelper().clickItemQuantityPlusButton();
         app.getItemContainerHelper().addItemToShoppingCart();
         Assert.assertEquals(app.getHeaderHelper().getAddedItemsCounterNumber(), "7", "Number of items on the shopping cart icon shows: 7.");
-        app.getShoppingCartHelper().goToShoppingCart();
 
+        app.getShoppingCartHelper().goToShoppingCart();
         Assert.assertEquals(app.getShoppingCartHelper().getNameOfFirstAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
         Assert.assertEquals(app.getShoppingCartHelper().getPriceOfFirstAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
         //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "red", "The colour of the added item in shopping cart is : red.");
@@ -42,13 +42,18 @@ public class ShoppingCartTest extends TestBase {
 
         Assert.assertEquals(app.getShoppingCartHelper().getNameOfSecondAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
         Assert.assertEquals(app.getShoppingCartHelper().getPriceOfSecondAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
-//      Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
+//      Assert.assertEquals(app.getShoppingCartHelper().getColourOfSecondAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
         Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfSecondAddedItem(), "2", "The quantity of the added item in shopping cart is : 2.");
 
-//        Assert.assertEquals(app.getShoppingCartHelper().getNameOfSecondAddedItem(), "Sauce Labs Onesie", "The name of the added item in shopping cart is : Sauce Labs Onesie.");
-//        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfSecondAddedItem(), "$7.99", "The price of the added item in shopping cart is : $7.99.");
-////        //Assert.assertEquals(app.getShoppingCartHelper().getColourOfFirstAddedItem(), "gray", "The colour of the added item in shopping cart is : gray.");
-//        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfSecondAddedItem(), "2", "The quantity of the added item in shopping cart is : 2.");
+        Assert.assertEquals(app.getShoppingCartHelper().getNameOfThirdAddedItem(), "Sauce Labs Backpack", "The name of the added item in shopping cart is : Sauce Labs Backpack.");
+        //Assert.assertEquals(app.getShoppingCartHelper().getPriceOfThirdAddedItem(), "$29.99", "The price of the added item in shopping cart is : $29.99.");
+          //Assert.assertEquals(app.getShoppingCartHelper().getColourOfThirdAddedItem(), "black", "The colour of the added item in shopping cart is : black.");
+        //Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfThirdAddedItem(), "1", "The quantity of the added item in shopping cart is : 1.");
+
+        //Assert.assertEquals(app.getShoppingCartHelper().getNameOfForthAddedItem(), "Sauce Labs Backpack", "The name of the added item in shopping cart is : Sauce Labs Backpack.");
+//        Assert.assertEquals(app.getShoppingCartHelper().getPriceOfForthAddedItem(), "$29.99", "The price of the added item in shopping cart is : $29.99.");
+        //Assert.assertEquals(app.getShoppingCartHelper().getColourOfForthAddedItem(), "red", "The colour of the added item in shopping cart is : red.");
+//        Assert.assertEquals(app.getShoppingCartHelper().getQuantityOfForthAddedItem(), "3", "The quantity of the added item in shopping cart is : 3.");
 
 //      check total price in shopping cart
 
